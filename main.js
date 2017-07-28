@@ -15,7 +15,7 @@ function question1 () {
     sum += data[i].price;
 }
   avg = sum / length;
-  console.log("The average price of all items is: " + avg);
+  console.log("The average price of all items is: " + avg.toFixed(2));
 }
 
 
@@ -34,7 +34,8 @@ function question2 () {
       items.push(newobj);
     }
   } /* end i loop */
-  /* I only have 4 answers because I add the check for USD currency */
+  /* I only have 4 answers because I added the check for USD currency since the
+  question says USD */
   console.log("Items that cost between $14 and $18:")
   for( let j = 0; j < items.length; j++ ){
   console.log(items[j].title);
