@@ -15,7 +15,7 @@ function question1 () {
     sum += data[i].price;
 }
   avg = sum / length;
-  console.log("The average price is: $" + avg.toFixed(2));
+  console.log("The average price is $" + avg.toFixed(2));
 }
 
 
@@ -35,7 +35,7 @@ function question2 () {
     }
   } /* end i loop */
   /* I only have 4 answers because I added the check for USD currency since the
-  question says USD */
+  question says USD. I also add this little header line...*/
   console.log("Items that cost between $14 and $18:")
   for( let j = 0; j < items.length; j++ ){
   console.log(items[j].title);
@@ -77,7 +77,7 @@ function question5 () {
   for( let i = 0; i < data.length; i++ ){
     let tstlength = data[i].materials.length;
     if ( tstlength >= 8 ){
-      console.log(data[i].title + " has " + tstlength + "materials");
+      console.log(data[i].title + " has " + tstlength + " materials");
       for ( let j = 0; j < tstlength; j++ ){
         console.log("- " + data[i].materials[j]);
       } /* j loop */
