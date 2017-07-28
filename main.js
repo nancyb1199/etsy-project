@@ -33,11 +33,13 @@ function question2 () {
     /*  console.log(newobj); */
       items.push(newobj);
     }
+  } /* end i loop */
+  /* I only have 4 answers because I add the check for USD currency */
+  console.log("Items that cost between $14 and $18:")
+  for( let j = 0; j < items.length; j++ ){
+  console.log(items[j].title);
+  }
 }
-console.log("Items that cost between $14 and $18:")
-console.log(items);
-}
-
 
 
 // 3: Which item has a "GBP" currency code? Display it's name and price.
@@ -45,7 +47,7 @@ function question3 () {
   let length = data.length;
   for( let i = 0; i < length; i++ ){
     if (data[i].currency_code == "GBP"){
-      console.log("Items with GBP currency: " + data[i].title + " " + data[i].price)
+      console.log(data[i].title + " costs " + data[i].price + " pounds")
     }
 }
 }
@@ -63,8 +65,9 @@ function question4 () {
       } /* if stmt */
     } /* end x loop */
   } /* end i loop */
-  console.log("All items made of wood:")
-  console.log(items);
+  for ( let j = 0; j < items.length; j++){
+  console.log(items[j].title + " is made of wood");
+  } /* end j loop */
 }
 
 // 5: Which items are made of eight or more materials?
@@ -73,12 +76,12 @@ function question5 () {
   for( let i = 0; i < data.length; i++ ){
     let tstlength = data[i].materials.length;
     if ( tstlength >= 8 ){
-      /* I had these all in one log stmt, but found it too hard to read */
-      console.log("Title:" + data[i].title);
-      console.log("Materials count: " + tstlength);
-      console.log("Materials used: " + data[i].materials);
-    }
-  }
+      console.log(data[i].title + " has " + tstlength + "materials");
+      for ( let j = 0; j < tstlength; j++ ){
+        console.log("- " + data[i].materials[j]);
+      } /* j loop */
+    } /* if stmt */
+  } /* i loop */
 }
 
 
@@ -91,5 +94,5 @@ function question6 () {
       count = count + 1;
     }
   }
-  console.log("The number of items made by their seller is " + count);
+  console.log(count + " items were made by their sellers");
 }
